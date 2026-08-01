@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tools — Arman Goshtasbi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-brand"><strong>Arman Goshtasbi</strong> / Portfolio</div>
+    <ul class="nav-tabs">
+      <li><a href="index.html"><span class="idx">01</span>Welcome</a></li>
+      <li><a href="projects.html"><span class="idx">02</span>Projects</a></li>
+      <li><a href="tools.html" class="active"><span class="idx">03</span>Tools</a></li>
+      <li><a href="research.html"><span class="idx">04</span>Research</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main class="wrap">
+  <section style="padding-top:56px;">
+    <div class="section-head">
+      <span class="sheet-no">03</span>
+      <h2>Tools &amp; software</h2>
+      <span class="rule"></span>
+    </div>
+    <p class="intro">Click a tool to see every file, across all projects, made with it.</p>
+
+    <!-- Tool pills are generated from the TOOL_FILES data below -->
+    <div class="tool-pills" id="toolPills"></div>
+
+    <div class="tool-results-head" id="resultsHead"></div>
+    <div class="file-list" id="resultsList"></div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <p>&copy; 2026 Arman Goshtasbi</p>
+  <div class="links">
+    <a href="https://github.com/Arman-Goshtasbi" target="_blank">GitHub</a>
+    <a href="mailto:argo@mmmi.sdu.dk">Email</a>
+    <a href="https://scholar.google.com/citations?user=5LY02PgAAAAJ&hl=en" target="_blank">Scholar</a>
+  </div>
+</footer>
+
+<script>
+  /* ============================================================
+     TOOL_FILES — the single place that maps each software you know
+     to the files/projects that used it.
+
+     TO ADD A NEW ENTRY: find the tool name below (or add a new key
+     for a tool not listed yet) and push a new object into its array:
+       { project: "Project title", projectLink: "project-x.html",
+         file: "filename.ext", fileLink: "https://github.com/...",
+         type: "CAD" | "Code" | "Simulation" | "Render" }
+     ============================================================ */
+  const TOOL_FILES = {
+    "SolidWorks": [
+      { project: "Soft robotic gripper", projectLink: "project-gripper.html", file: "gripper_assembly.SLDASM", fileLink: "https://github.com/Arman-Goshtasbi/soft-gripper/blob/main/cad/gripper_assembly.SLDASM", type: "CAD" },
+      { project: "Soft robotic gripper", projectLink: "project-gripper.html", file: "finger_link.SLDPRT", fileLink: "https://github.com/Arman-Goshtasbi/soft-gripper/blob/main/cad/finger_link.SLDPRT", type: "CAD" },
+      { project: "Adjustable bracket assembly", projectLink: "project-bracket.html", file: "bracket_assembly.SLDASM", fileLink: "https://github.com/Arman-Goshtasbi/bracket-design/blob/main/cad/bracket_assembly.SLDASM", type: "CAD" },
+      { project: "Adjustable bracket assembly", projectLink: "project-bracket.html", file: "bracket_arm.SLDPRT", fileLink: "https://github.com/Arman-Goshtasbi/bracket-design/blob/main/cad/bracket_arm.SLDPRT", type: "CAD" },
+      { project: "Thermal FEA of a heat sink", projectLink: "project-thermal.html", file: "heatsink_geometry.SLDPRT", fileLink: "https://github.com/Arman-Goshtasbi/thermal-fea-study/blob/main/cad/heatsink_geometry.SLDPRT", type: "CAD" }
+    ],
+    "Rhino / Grasshopper": [
+      // no files tagged yet — add entries here once you have a project using it
+    ],
+    "COMSOL Multiphysics": [
+      { project: "Soft robotic gripper", projectLink: "project-gripper.html", file: "finger_deflection.mph", fileLink: "https://github.com/Arman-Goshtasbi/soft-gripper/blob/main/sim/finger_deflection.mph", type: "Simulation" },
+      { project: "Thermal FEA of a heat sink", projectLink: "project-thermal.html", file: "heatsink_thermal.mph", fileLink: "https://github.com/Arman-Goshtasbi/thermal-fea-study/blob/main/sim/heatsink_thermal.mph", type: "Simulation" },
+      { project: "Thermal FEA of a heat sink", projectLink: "project-thermal.html", file: "results_summary.pdf", fileLink: "https://github.com/Arman-Goshtasbi/thermal-fea-study/blob/main/sim/results_summary.pdf", type: "Simulation" }
+    ],
+    "MATLAB": [
+      { project: "Thermal FEA of a heat sink", projectLink: "project-thermal.html", file: "plot_temp_field.m (repo)", fileLink: "https://github.com/Arman-Goshtasbi/thermal-fea-study", type: "Code" }
+    ],
+    "Python": [
+      { project: "Soft robotic gripper", projectLink: "project-gripper.html", file: "log_pressure.py (repo)", fileLink: "https://github.com/Arman-Goshtasbi/soft-gripper", type: "Code" }
+    ],
+    "Arduino IDE": [
+      { project: "Soft robotic gripper", projectLink: "project-gripper.html", file: "gripper_firmware.ino (repo)", fileLink: "https://github.com/Arman-Goshtasbi/soft-gripper", type: "Code" }
+    ]
+  };
+
+  const pillsEl = document.getElementById('toolPills');
+  const headEl = document.getElementById('resultsHead');
+  const listEl = document.getElementById('resultsList');
+
+  function renderResults(tool) {
+    const items = TOOL_FILES[tool] || [];
+    headEl.innerHTML = `Files made with <strong>${tool}</strong> — ${items.length} result${items.length === 1 ? '' : 's'}`;
+    listEl.innerHTML = '';
+
+    if (items.length === 0) {
+      listEl.innerHTML = `<div class="tool-empty">No files tagged with ${tool} yet.</div>`;
+      return;
+    }
+
+    items.forEach(item => {
+      const row = document.createElement('div');
+      row.className = 'file-row';
+      row.innerHTML = `
+        <span class="fname">
+          ${item.file}
+          <span class="fmeta">${item.type} — <a href="${item.projectLink}" style="color:var(--muted);">${item.project}</a></span>
+        </span>
+        <a href="${item.fileLink}" target="_blank">Open →</a>
+      `;
+      listEl.appendChild(row);
+    });
+  }
+
+  Object.keys(TOOL_FILES).forEach((tool, i) => {
+    const pill = document.createElement('button');
+    pill.className = 'tool-pill' + (i === 0 ? ' active' : '');
+    pill.textContent = tool;
+    pill.addEventListener('click', () => {
+      document.querySelectorAll('.tool-pill').forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      renderResults(tool);
+    });
+    pillsEl.appendChild(pill);
+  });
+
+  // Show the first tool's results on load
+  renderResults(Object.keys(TOOL_FILES)[0]);
+</script>
+
+</body>
+</html>

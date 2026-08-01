@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Soft Robotic Gripper — Your Name</title>
+<title>Soft Robotic Gripper — Arman Goshtasbi</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -12,11 +12,12 @@
 
 <nav class="nav">
   <div class="nav-inner">
-    <div class="nav-brand"><strong>Your Name</strong> / Engineering Portfolio</div>
+    <div class="nav-brand"><strong>Arman Goshtasbi</strong> / Portfolio</div>
     <ul class="nav-tabs">
-      <li><a href="index.html" class="active"><span class="idx">01</span>Work</a></li>
-      <li><a href="research.html"><span class="idx">02</span>Research</a></li>
-      <li><a href="about.html"><span class="idx">03</span>About</a></li>
+      <li><a href="index.html"><span class="idx">01</span>Welcome</a></li>
+      <li><a href="projects.html" class="active"><span class="idx">02</span>Projects</a></li>
+      <li><a href="tools.html"><span class="idx">03</span>Tools</a></li>
+      <li><a href="research.html"><span class="idx">04</span>Research</a></li>
     </ul>
   </div>
 </nav>
@@ -32,7 +33,7 @@
 </header>
 
 <main class="wrap">
-  <div class="breadcrumb"><a href="index.html">← All projects</a></div>
+  <div class="breadcrumb"><a href="projects.html">← All projects</a></div>
 
   <!-- PARTS SELECTOR — click to switch between file types -->
   <nav class="parts-nav" role="tablist" aria-label="Project sections">
@@ -63,16 +64,16 @@
     <p class="part-desc">Full assembly and part files. Large files tracked with Git LFS.</p>
     <div class="file-list">
       <div class="file-row">
-        <span class="fname">gripper_assembly.step <span class="fmeta">14.2 MB</span></span>
-        <a href="https://github.com/yourusername/soft-gripper/blob/main/cad/gripper_assembly.step" target="_blank">Download →</a>
+        <span class="fname">gripper_assembly.SLDASM <span class="fmeta">14.2 MB</span></span>
+        <a href="https://github.com/Arman-Goshtasbi/soft-gripper/blob/main/cad/gripper_assembly.SLDASM" target="_blank">Download →</a>
       </div>
       <div class="file-row">
-        <span class="fname">finger_link.sldprt <span class="fmeta">2.1 MB</span></span>
-        <a href="https://github.com/yourusername/soft-gripper/blob/main/cad/finger_link.sldprt" target="_blank">Download →</a>
+        <span class="fname">finger_link.SLDPRT <span class="fmeta">2.1 MB</span></span>
+        <a href="https://github.com/Arman-Goshtasbi/soft-gripper/blob/main/cad/finger_link.SLDPRT" target="_blank">Download →</a>
       </div>
       <div class="file-row">
-        <span class="fname">base_mount.f3d <span class="fmeta">3.4 MB</span></span>
-        <a href="https://github.com/yourusername/soft-gripper/blob/main/cad/base_mount.f3d" target="_blank">Download →</a>
+        <span class="fname">base_mount.SLDPRT <span class="fmeta">3.4 MB</span></span>
+        <a href="https://github.com/Arman-Goshtasbi/soft-gripper/blob/main/cad/base_mount.SLDPRT" target="_blank">Download →</a>
       </div>
     </div>
   </section>
@@ -80,14 +81,15 @@
   <!-- CODE -->
   <section class="part-panel" id="code" role="tabpanel">
     <h2>Code</h2>
-    <p class="part-desc">Control firmware and the pressure-sequencing logic used to actuate the gripper.</p>
+    <p class="part-desc">Arduino firmware for valve control, and a Python script for logging pressure data.</p>
     <div class="code-block">
-def actuate_finger(pressure_kpa, duration_s):<br>
-&nbsp;&nbsp;&nbsp;&nbsp;valve.set_pressure(pressure_kpa)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;time.sleep(duration_s)<br>
-&nbsp;&nbsp;&nbsp;&nbsp;valve.release()
+void actuateFinger(int pressureKpa, int durationMs) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;setValvePressure(pressureKpa);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;delay(durationMs);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;releaseValve();<br>
+}
     </div>
-    <a class="repo-link" href="https://github.com/yourusername/soft-gripper" target="_blank">View full repo on GitHub →</a>
+    <a class="repo-link" href="https://github.com/Arman-Goshtasbi/soft-gripper" target="_blank">View full repo on GitHub →</a>
   </section>
 
   <!-- RENDERS -->
@@ -107,11 +109,11 @@ def actuate_finger(pressure_kpa, duration_s):<br>
   <!-- SIMULATION -->
   <section class="part-panel" id="sim" role="tabpanel">
     <h2>Simulation</h2>
-    <p class="part-desc">FEA results for finger deflection under pressure loading.</p>
+    <p class="part-desc">COMSOL model of finger deflection under internal pressure loading.</p>
     <div class="file-list">
       <div class="file-row">
-        <span class="fname">finger_deflection_results.pdf <span class="fmeta">1.8 MB</span></span>
-        <a href="https://github.com/yourusername/soft-gripper/blob/main/sim/finger_deflection_results.pdf" target="_blank">Download →</a>
+        <span class="fname">finger_deflection.mph <span class="fmeta">8.6 MB</span></span>
+        <a href="https://github.com/Arman-Goshtasbi/soft-gripper/blob/main/sim/finger_deflection.mph" target="_blank">Download →</a>
       </div>
     </div>
     <div class="gallery" style="margin-top:16px;">
@@ -124,20 +126,20 @@ def actuate_finger(pressure_kpa, duration_s):<br>
   <div class="tools-strip">
     <span class="label">Tools &amp; software</span>
     <div class="tags">
-      <span class="tag">Fusion 360</span>
+      <span class="tag">SolidWorks</span>
+      <span class="tag">Arduino IDE</span>
       <span class="tag">Python</span>
-      <span class="tag">Arduino</span>
-      <span class="tag">ANSYS</span>
+      <span class="tag">COMSOL Multiphysics</span>
     </div>
   </div>
 </main>
 
 <footer class="wrap">
-  <p>&copy; 2026 Your Name</p>
+  <p>&copy; 2026 Arman Goshtasbi</p>
   <div class="links">
-    <a href="https://github.com/yourusername" target="_blank">GitHub</a>
-    <a href="mailto:you@email.com">Email</a>
-    <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
+    <a href="https://github.com/Arman-Goshtasbi" target="_blank">GitHub</a>
+    <a href="mailto:argo@mmmi.sdu.dk">Email</a>
+    <a href="https://scholar.google.com/citations?user=5LY02PgAAAAJ&hl=en" target="_blank">Scholar</a>
   </div>
 </footer>
 

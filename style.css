@@ -253,3 +253,42 @@ a:focus-visible, button:focus-visible{outline:2px solid var(--accent); outline-o
   color:var(--muted); margin-bottom:10px; display:block;
 }
 .tools-strip .tags{display:flex; flex-wrap:wrap; gap:8px;}
+
+/* ================= WELCOME PAGE ================= */
+.welcome-block{
+  display:flex; gap:40px; align-items:flex-start; padding:56px 0 40px;
+  border-bottom:1px solid var(--line);
+}
+.welcome-photo{
+  flex-shrink:0; width:180px; height:180px; border-radius:50%;
+  background:repeating-linear-gradient(45deg,#DAD7CB 0 2px,var(--panel) 2px 14px);
+  border:1px solid var(--line-strong);
+}
+.welcome-text .eyebrow{
+  font-family:var(--mono); font-size:12px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--accent); display:block; margin-bottom:10px;
+}
+.welcome-text h1{font-size:32px; font-weight:600; margin-bottom:14px;}
+.welcome-text p{color:var(--muted); max-width:600px; margin-bottom:10px; font-size:15px;}
+.welcome-cta{
+  display:inline-block; margin-top:10px; font-family:var(--mono); font-size:13px;
+  color:var(--accent); border:1px solid var(--line-strong); padding:10px 18px;
+}
+.welcome-cta:hover{border-color:var(--accent);}
+
+/* ================= TOOLS PAGE ================= */
+.tool-pills{display:flex; flex-wrap:wrap; gap:10px; margin:28px 0 36px;}
+.tool-pill{
+  font-family:var(--mono); font-size:12px; letter-spacing:.04em; text-transform:uppercase;
+  padding:9px 16px; border:1px solid var(--line-strong); background:var(--panel);
+  color:var(--muted); cursor:pointer;
+}
+.tool-pill:hover{color:var(--ink);}
+.tool-pill.active{color:#fff; background:var(--ink); border-color:var(--ink);}
+
+.tool-results-head{
+  font-family:var(--mono); font-size:12px; color:var(--muted); text-transform:uppercase;
+  letter-spacing:.05em; margin-bottom:10px;
+}
+.tool-results-head strong{color:var(--ink);}
+.tool-empty{color:var(--muted); font-size:14px; padding:24px 0;}
