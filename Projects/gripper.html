@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soft Robotic Gripper — Arman Goshtasbi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-brand"><strong>Arman Goshtasbi</strong> / Portfolio</div>
+    <ul class="nav-tabs">
+      <li><a href="/"><span class="idx">01</span>Welcome</a></li>
+      <li><a href="/projects/" class="active"><span class="idx">02</span>Projects</a></li>
+      <li><a href="/tools/"><span class="idx">03</span>Tools</a></li>
+      <li><a href="/research/"><span class="idx">04</span>Research</a></li>
+      <li><a href="/about/"><span class="idx">05</span>About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="project-hero">
+  <!-- Replace with your own photo:
+       style="background-image:url('/assets/gripper/hero.jpg'); background-size:cover; background-position:center;" -->
+  <div class="wrap">
+    <span class="eyebrow">Unpublished — Soft Robotics</span>
+    <h1>Soft robotic gripper</h1>
+    <p>An underactuated, pneumatically driven gripper designed to conform to irregular objects without active sensing.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="breadcrumb"><a href="/projects/">← All projects</a></div>
+
+  <!-- PARTS SELECTOR — click to switch between file types -->
+  <nav class="parts-nav" role="tablist" aria-label="Project sections">
+    <button class="active" data-part="overview" role="tab" aria-selected="true">Overview</button>
+    <button data-part="cad" role="tab" aria-selected="false">CAD</button>
+    <button data-part="code" role="tab" aria-selected="false">Code</button>
+    <button data-part="renders" role="tab" aria-selected="false">Renders</button>
+    <button data-part="sim" role="tab" aria-selected="false">Simulation</button>
+  </nav>
+
+  <!-- OVERVIEW -->
+  <section class="part-panel active" id="overview" role="tabpanel">
+    <h2>Overview</h2>
+    <p class="part-desc">
+      Design goal, approach, and outcome go here — a few sentences on the problem,
+      what you built, and what you learned. Treat this like the abstract of the project.
+    </p>
+    <div class="gallery">
+      <div class="gallery-item"></div>
+      <div class="gallery-item"></div>
+      <div class="gallery-item"></div>
+    </div>
+  </section>
+
+  <!-- CAD -->
+  <section class="part-panel" id="cad" role="tabpanel">
+    <h2>CAD files</h2>
+    <p class="part-desc">Full assembly and part files. Large files tracked with Git LFS.</p>
+    <div class="file-list">
+      <div class="file-row">
+        <span class="fname">gripper_assembly.SLDASM <span class="fmeta">14.2 MB</span></span>
+        <a href="https://github.com/Arman-Goshtasbi/soft-gripper/blob/main/cad/gripper_assembly.SLDASM" target="_blank">Download →</a>
+      </div>
+      <div class="file-row">
+        <span class="fname">finger_link.SLDPRT <span class="fmeta">2.1 MB</span></span>
+        <a href="https://github.com/Arman-Goshtasbi/soft-gripper/blob/main/cad/finger_link.SLDPRT" target="_blank">Download →</a>
+      </div>
+      <div class="file-row">
+        <span class="fname">base_mount.SLDPRT <span class="fmeta">3.4 MB</span></span>
+        <a href="https://github.com/Arman-Goshtasbi/soft-gripper/blob/main/cad/base_mount.SLDPRT" target="_blank">Download →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CODE -->
+  <section class="part-panel" id="code" role="tabpanel">
+    <h2>Code</h2>
+    <p class="part-desc">Arduino firmware for valve control, and a Python script for logging pressure data.</p>
+    <div class="code-block">
+void actuateFinger(int pressureKpa, int durationMs) {<br>
+&nbsp;&nbsp;&nbsp;&nbsp;setValvePressure(pressureKpa);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;delay(durationMs);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;releaseValve();<br>
+}
+    </div>
+    <a class="repo-link" href="https://github.com/Arman-Goshtasbi/soft-gripper" target="_blank">View full repo on GitHub →</a>
+  </section>
+
+  <!-- RENDERS -->
+  <section class="part-panel" id="renders" role="tabpanel">
+    <h2>Renders</h2>
+    <p class="part-desc">Concept renders and prototype photos.</p>
+    <div class="gallery">
+      <div class="gallery-item"></div>
+      <div class="gallery-item"></div>
+      <div class="gallery-item"></div>
+      <div class="gallery-item"></div>
+      <div class="gallery-item"></div>
+      <div class="gallery-item"></div>
+    </div>
+  </section>
+
+  <!-- SIMULATION -->
+  <section class="part-panel" id="sim" role="tabpanel">
+    <h2>Simulation</h2>
+    <p class="part-desc">COMSOL model of finger deflection under internal pressure loading.</p>
+    <div class="file-list">
+      <div class="file-row">
+        <span class="fname">finger_deflection.mph <span class="fmeta">8.6 MB</span></span>
+        <a href="https://github.com/Arman-Goshtasbi/soft-gripper/blob/main/sim/finger_deflection.mph" target="_blank">Download →</a>
+      </div>
+    </div>
+    <div class="gallery" style="margin-top:16px;">
+      <div class="gallery-item"></div>
+      <div class="gallery-item"></div>
+    </div>
+  </section>
+
+  <!-- TOOLS / SOFTWARE USED -->
+  <div class="tools-strip">
+    <span class="label">Tools &amp; software</span>
+    <div class="tags">
+      <span class="tag">SolidWorks</span>
+      <span class="tag">Arduino IDE</span>
+      <span class="tag">Python</span>
+      <span class="tag">COMSOL Multiphysics</span>
+    </div>
+  </div>
+</main>
+
+<footer class="wrap">
+  <p>&copy; 2026 Arman Goshtasbi</p>
+  <div class="links">
+    <a href="https://github.com/Arman-Goshtasbi" target="_blank">GitHub</a>
+    <a href="mailto:argo@mmmi.sdu.dk">Email</a>
+    <a href="https://scholar.google.com/citations?user=5LY02PgAAAAJ&hl=en" target="_blank">Scholar</a>
+  </div>
+</footer>
+
+<script>
+  // Parts selector: show one panel at a time
+  document.querySelectorAll('.parts-nav button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.parts-nav button').forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      document.querySelectorAll('.part-panel').forEach(p => p.classList.remove('active'));
+
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+      document.getElementById(btn.dataset.part).classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
