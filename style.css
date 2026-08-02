@@ -1,0 +1,294 @@
+:root{
+  --bg:#ECEAE2;
+  --panel:#F5F4EE;
+  --ink:#1F2321;
+  --line:#C9C5B8;
+  --line-strong:#9B9788;
+  --muted:#6B6858;
+  --accent:#E8590C;
+  --accent-ink:#FBEFE6;
+  --mono: 'IBM Plex Mono', monospace;
+  --sans: 'IBM Plex Sans', sans-serif;
+}
+
+*{box-sizing:border-box; margin:0; padding:0;}
+
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:16px;
+  line-height:1.55;
+}
+
+a{color:inherit; text-decoration:none;}
+
+.wrap{max-width:1120px; margin:0 auto; padding:0 32px;}
+
+/* ---------- NAV: sheet index ---------- */
+.nav{
+  border-bottom:1px solid var(--line-strong);
+  background:var(--panel);
+}
+.nav-inner{
+  max-width:1120px; margin:0 auto; padding:18px 32px;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.nav-brand{
+  font-family:var(--mono); font-size:13px; letter-spacing:.08em;
+  text-transform:uppercase; color:var(--muted);
+}
+.nav-brand strong{color:var(--ink);}
+.nav-tabs{display:flex; gap:2px; list-style:none;}
+.nav-tabs a{
+  font-family:var(--mono); font-size:12px; letter-spacing:.06em;
+  text-transform:uppercase; padding:8px 14px; color:var(--muted);
+  border:1px solid transparent;
+}
+.nav-tabs a:hover{color:var(--ink);}
+.nav-tabs a.active{
+  color:var(--ink); border:1px solid var(--line-strong); background:var(--bg);
+}
+.nav-tabs .idx{color:var(--accent); margin-right:6px;}
+
+/* ---------- HERO ---------- */
+.hero{
+  position:relative;
+  height:64vh; min-height:420px;
+  background:
+    linear-gradient(180deg, rgba(31,35,33,0) 40%, rgba(31,35,33,.85) 100%),
+    repeating-linear-gradient(135deg, #2A2E2B 0px, #2A2E2B 2px, #232623 2px, #232623 40px);
+  display:flex; align-items:flex-end;
+  border-bottom:1px solid var(--line-strong);
+}
+.hero .wrap{
+  width:100%; padding-bottom:40px;
+  display:flex; align-items:flex-end; justify-content:space-between; gap:24px;
+}
+.hero-title{color:#fff;}
+.hero-title .eyebrow{
+  font-family:var(--mono); font-size:12px; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--accent); display:block; margin-bottom:10px;
+}
+.hero-title h1{
+  font-family:var(--sans); font-weight:600; font-size:42px; line-height:1.1;
+  max-width:560px;
+}
+.hero-title p{color:#D8D5C9; margin-top:12px; max-width:480px; font-size:15px;}
+
+/* title block, like a CAD drawing corner stamp */
+.titleblock{
+  flex-shrink:0; background:var(--panel); border:1px solid var(--line-strong);
+  font-family:var(--mono); font-size:11px; width:240px;
+}
+.titleblock .row{
+  display:flex; justify-content:space-between; padding:7px 10px;
+  border-bottom:1px solid var(--line);
+}
+.titleblock .row:last-child{border-bottom:none;}
+.titleblock .label{color:var(--muted); text-transform:uppercase; letter-spacing:.05em;}
+.titleblock .val{color:var(--ink); font-weight:500;}
+
+/* ---------- SECTIONS ---------- */
+section{padding:64px 0; border-bottom:1px solid var(--line);}
+section:last-of-type{border-bottom:none;}
+.section-head{
+  display:flex; align-items:baseline; gap:16px; margin-bottom:32px;
+}
+.section-head .sheet-no{
+  font-family:var(--mono); font-size:13px; color:var(--accent);
+}
+.section-head h2{font-size:22px; font-weight:600;}
+.section-head .rule{flex:1; height:1px; background:var(--line);}
+
+.intro{max-width:640px; color:var(--muted); font-size:16px;}
+
+/* ---------- CATEGORY TILES (home) ---------- */
+.tiles{display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:32px;}
+.tile{
+  border:1px solid var(--line-strong); background:var(--panel);
+  display:flex; flex-direction:column; transition:border-color .15s;
+}
+.tile:hover{border-color:var(--accent);}
+.tile-photo{
+  aspect-ratio:4/3; background:repeating-linear-gradient(45deg,#DAD7CB 0 2px,var(--panel) 2px 14px);
+  border-bottom:1px solid var(--line);
+}
+.tile-body{padding:16px;}
+.tile-body .idx{font-family:var(--mono); font-size:11px; color:var(--accent);}
+.tile-body h3{font-size:16px; font-weight:600; margin:6px 0 4px;}
+.tile-body p{font-size:13px; color:var(--muted);}
+
+/* ---------- PROJECT GRID (category pages) ---------- */
+.grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+.card{border:1px solid var(--line-strong); background:var(--panel); display:flex; flex-direction:column;}
+.card-photo{
+  aspect-ratio:4/3;
+  background:repeating-linear-gradient(45deg,#DAD7CB 0 2px,var(--panel) 2px 14px);
+  border-bottom:1px solid var(--line);
+}
+.card-body{padding:16px; display:flex; flex-direction:column; gap:8px; flex:1;}
+.card-body h3{font-size:15px; font-weight:600;}
+.card-body p{font-size:13px; color:var(--muted); flex:1;}
+.tags{display:flex; flex-wrap:wrap; gap:6px;}
+.tag{
+  font-family:var(--mono); font-size:10px; letter-spacing:.04em; text-transform:uppercase;
+  padding:3px 8px; border:1px solid var(--line-strong); color:var(--muted);
+}
+.card-link{
+  font-family:var(--mono); font-size:12px; color:var(--accent);
+  border-top:1px solid var(--line); padding-top:10px; margin-top:4px;
+}
+.card-link:hover{text-decoration:underline;}
+
+/* ---------- FOOTER ---------- */
+footer{padding:32px 0; }
+footer .wrap{display:flex; justify-content:space-between; align-items:center;}
+footer p{font-family:var(--mono); font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.05em;}
+footer .links{display:flex; gap:16px;}
+footer .links a{font-family:var(--mono); font-size:11px; color:var(--muted);}
+footer .links a:hover{color:var(--ink);}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width:800px){
+  .nav-inner{flex-direction:column; align-items:flex-start; gap:12px;}
+  .hero{height:auto; padding-top:100px;}
+  .hero .wrap{flex-direction:column; align-items:flex-start;}
+  .titleblock{width:100%;}
+  .hero-title h1{font-size:30px;}
+  .tiles, .grid{grid-template-columns:1fr;}
+  .parts-nav{overflow-x:auto;}
+}
+
+/* focus visibility */
+a:focus-visible, button:focus-visible{outline:2px solid var(--accent); outline-offset:2px;}
+
+/* ================= PROJECT DETAIL PAGE ================= */
+
+.project-hero{
+  position:relative;
+  height:50vh; min-height:340px;
+  background:
+    linear-gradient(180deg, rgba(31,35,33,0) 45%, rgba(31,35,33,.85) 100%),
+    repeating-linear-gradient(135deg, #2A2E2B 0px, #2A2E2B 2px, #232623 2px, #232623 40px);
+  display:flex; align-items:flex-end;
+  border-bottom:1px solid var(--line-strong);
+}
+.project-hero .wrap{width:100%; padding-bottom:32px;}
+.project-hero .eyebrow{
+  font-family:var(--mono); font-size:12px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--accent); display:block; margin-bottom:8px;
+}
+.project-hero h1{color:#fff; font-size:34px; font-weight:600; max-width:640px;}
+.project-hero p{color:#D8D5C9; margin-top:10px; max-width:560px; font-size:14px;}
+
+.breadcrumb{
+  font-family:var(--mono); font-size:12px; color:var(--muted); padding:16px 0 0;
+}
+.breadcrumb a{color:var(--muted);}
+.breadcrumb a:hover{color:var(--accent);}
+
+/* parts selector — pill tabs to switch between CAD / Code / Renders / Sim */
+.parts-nav{
+  display:flex; gap:8px; margin:32px 0 28px;
+  border-bottom:1px solid var(--line); padding-bottom:0;
+}
+.parts-nav button{
+  font-family:var(--mono); font-size:12px; letter-spacing:.05em; text-transform:uppercase;
+  background:none; border:none; cursor:pointer; color:var(--muted);
+  padding:10px 4px; margin-right:22px; position:relative; border-bottom:2px solid transparent;
+}
+.parts-nav button:hover{color:var(--ink);}
+.parts-nav button.active{color:var(--ink); border-bottom-color:var(--accent);}
+.parts-nav button .count{
+  font-size:10px; color:var(--muted); margin-left:4px;
+}
+
+.part-panel{display:none;}
+.part-panel.active{display:block;}
+
+.part-panel h2{font-size:18px; font-weight:600; margin-bottom:6px;}
+.part-panel .part-desc{color:var(--muted); font-size:14px; max-width:600px; margin-bottom:20px;}
+
+/* file list — for CAD / simulation downloadable files */
+.file-list{border:1px solid var(--line-strong); background:var(--panel);}
+.file-row{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:12px 16px; border-bottom:1px solid var(--line);
+  font-family:var(--mono); font-size:13px;
+}
+.file-row:last-child{border-bottom:none;}
+.file-row .fname{color:var(--ink);}
+.file-row .fmeta{color:var(--muted); font-size:11px; margin-left:10px;}
+.file-row a{color:var(--accent);}
+.file-row a:hover{text-decoration:underline;}
+
+/* image gallery — for renders / sim result images */
+.gallery{
+  display:grid; grid-template-columns:repeat(3,1fr); gap:12px;
+}
+.gallery-item{
+  aspect-ratio:4/3; border:1px solid var(--line-strong);
+  background:repeating-linear-gradient(45deg,#DAD7CB 0 2px,var(--panel) 2px 14px);
+}
+@media (max-width:800px){.gallery{grid-template-columns:1fr 1fr;}}
+
+/* code panel */
+.code-block{
+  background:var(--ink); color:#E8E5D8; font-family:var(--mono); font-size:12.5px;
+  padding:18px; overflow-x:auto; border:1px solid var(--line-strong); line-height:1.6;
+}
+.repo-link{
+  display:inline-block; margin-top:16px; font-family:var(--mono); font-size:13px;
+  color:var(--accent); border:1px solid var(--line-strong); padding:8px 14px;
+}
+.repo-link:hover{border-color:var(--accent);}
+
+/* software / tools used — footer strip on project page */
+.tools-strip{
+  border-top:1px solid var(--line-strong); padding:24px 0; margin-top:12px;
+}
+.tools-strip .label{
+  font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase;
+  color:var(--muted); margin-bottom:10px; display:block;
+}
+.tools-strip .tags{display:flex; flex-wrap:wrap; gap:8px;}
+
+/* ================= WELCOME PAGE ================= */
+.welcome-block{
+  display:flex; gap:40px; align-items:flex-start; padding:56px 0 40px;
+  border-bottom:1px solid var(--line);
+}
+.welcome-photo{
+  flex-shrink:0; width:180px; height:180px; border-radius:50%;
+  background:repeating-linear-gradient(45deg,#DAD7CB 0 2px,var(--panel) 2px 14px);
+  border:1px solid var(--line-strong);
+}
+.welcome-text .eyebrow{
+  font-family:var(--mono); font-size:12px; letter-spacing:.1em; text-transform:uppercase;
+  color:var(--accent); display:block; margin-bottom:10px;
+}
+.welcome-text h1{font-size:32px; font-weight:600; margin-bottom:14px;}
+.welcome-text p{color:var(--muted); max-width:600px; margin-bottom:10px; font-size:15px;}
+.welcome-cta{
+  display:inline-block; margin-top:10px; font-family:var(--mono); font-size:13px;
+  color:var(--accent); border:1px solid var(--line-strong); padding:10px 18px;
+}
+.welcome-cta:hover{border-color:var(--accent);}
+
+/* ================= TOOLS PAGE ================= */
+.tool-pills{display:flex; flex-wrap:wrap; gap:10px; margin:28px 0 36px;}
+.tool-pill{
+  font-family:var(--mono); font-size:12px; letter-spacing:.04em; text-transform:uppercase;
+  padding:9px 16px; border:1px solid var(--line-strong); background:var(--panel);
+  color:var(--muted); cursor:pointer;
+}
+.tool-pill:hover{color:var(--ink);}
+.tool-pill.active{color:#fff; background:var(--ink); border-color:var(--ink);}
+
+.tool-results-head{
+  font-family:var(--mono); font-size:12px; color:var(--muted); text-transform:uppercase;
+  letter-spacing:.05em; margin-bottom:10px;
+}
+.tool-results-head strong{color:var(--ink);}
+.tool-empty{color:var(--muted); font-size:14px; padding:24px 0;}
