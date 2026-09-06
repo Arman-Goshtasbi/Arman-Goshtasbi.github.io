@@ -36,7 +36,7 @@
     <div class="tool-pills" id="toolPills"></div>
 
     <div class="tool-results-head" id="resultsHead"></div>
-    <div class="file-list" id="resultsList"></div>
+    <div id="resultsList"></div>
   </section>
 </main>
 
@@ -63,6 +63,8 @@
   const TOOL_FILES = {
     "SolidWorks": [
       { project: "Cooling system for aluminum cladding", projectLink: "/projects/cooling-system.html", file: "Cooling_housing_v3_2.SLDPRT", fileLink: "/assets/cooling-system/Cooling_housing_v3_2.SLDPRT", type: "CAD" },
+      { project: "Cooling system for aluminum cladding", projectLink: "/projects/cooling-system.html", file: "Cooling_housing_v3_2.STEP", fileLink: "/assets/cooling-system/Cooling_housing_v3_2.STEP", type: "CAD" },
+      { project: "Cooling system for aluminum cladding", projectLink: "/projects/cooling-system.html", file: "Cooling_housingcover_v3_2.STEP", fileLink: "/assets/cooling-system/Cooling_housingcover_v3_2.STEP", type: "CAD" },
       { project: "Cooling system for aluminum cladding", projectLink: "/projects/cooling-system.html", file: "Cladding_Cooling_Assembly.STEP", fileLink: "/assets/cooling-system/Cladding_Cooling_Assembly.STEP", type: "CAD" },
       { project: "Cooling system for aluminum cladding", projectLink: "/projects/cooling-system.html", file: "Side_Screw_Inserts.STEP", fileLink: "/assets/cooling-system/Side_Screw_Inserts.STEP", type: "CAD" }
     ],
@@ -97,17 +99,41 @@
       return;
     }
 
+    // Group items by project, preserving first-seen order
+    const groups = [];
+    const groupIndex = {};
     items.forEach(item => {
-      const row = document.createElement('div');
-      row.className = 'file-row';
-      row.innerHTML = `
-        <span class="fname">
-          ${item.file}
-          <span class="fmeta">${item.type} — <a href="${item.projectLink}" style="color:var(--muted);">${item.project}</a></span>
-        </span>
-        <a href="${item.fileLink}" target="_blank">Open →</a>
+      if (!(item.project in groupIndex)) {
+        groupIndex[item.project] = groups.length;
+        groups.push({ project: item.project, projectLink: item.projectLink, files: [] });
+      }
+      groups[groupIndex[item.project]].files.push(item);
+    });
+
+    groups.forEach((group, i) => {
+      const groupEl = document.createElement('div');
+      groupEl.className = 'tool-group' + (i === 0 ? ' open' : '');
+
+      const filesHtml = group.files.map(item => `
+        <div class="file-row">
+          <span class="fname">${item.file}<span class="fmeta">${item.type}</span></span>
+          <a href="${item.fileLink}" target="_blank">Open →</a>
+        </div>
+      `).join('');
+
+      groupEl.innerHTML = `
+        <div class="tool-group-header">
+          <span><span class="tool-group-title">${group.project}</span><span class="tool-group-count">${group.files.length} file${group.files.length === 1 ? '' : 's'}</span></span>
+          <span class="tool-group-chevron">›</span>
+        </div>
+        <div class="tool-group-files">${filesHtml}</div>
       `;
-      listEl.appendChild(row);
+
+      groupEl.querySelector('.tool-group-header').addEventListener('click', () => {
+        groupEl.classList.toggle('open');
+      });
+
+      listEl.appendChild(groupEl);
     });
   }
 
