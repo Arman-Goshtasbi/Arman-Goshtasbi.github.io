@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rack-Driven Scissor Mechanism — Arman Goshtasbi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-brand"><strong>Arman Goshtasbi</strong> / Portfolio</div>
+    <ul class="nav-tabs">
+      <li><a href="/"><span class="idx">01</span>Welcome</a></li>
+      <li><a href="/projects/" class="active"><span class="idx">02</span>Projects</a></li>
+      <li><a href="/tools/"><span class="idx">03</span>Tools</a></li>
+      <li><a href="/research/"><span class="idx">04</span>Research</a></li>
+      <li><a href="/about/"><span class="idx">05</span>About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="project-hero" style="background-image:url('/assets/rack-scissor/hero.jpg'); background-size:cover; background-position:center;">
+  <div class="wrap">
+    <span class="eyebrow">Bachelor Project — Mechanical Design</span>
+    <h1>Rack-driven scissor mechanism</h1>
+    <p>A motor-driven scissor lift actuated by a rack-and-pinion system rather than a lead screw or linear actuator.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="breadcrumb"><a href="/projects/">← All projects</a></div>
+
+  <!-- PARTS SELECTOR -->
+  <nav class="parts-nav" role="tablist" aria-label="Project sections">
+    <button class="active" data-part="overview" role="tab" aria-selected="true">Overview</button>
+    <button data-part="cad" role="tab" aria-selected="false">CAD</button>
+    <button data-part="renders" role="tab" aria-selected="false">Renders</button>
+  </nav>
+
+  <!-- OVERVIEW -->
+  <section class="part-panel active" id="overview" role="tabpanel">
+    <h2>Overview</h2>
+    <p class="part-desc">
+      A motor drives a central shaft carrying a pinion gear at each end. Each pinion meshes with a rack mounted
+      on a sliding bracket, so as the shaft rotates, both brackets are driven along the base symmetrically.
+      This motion drives the scissor linkage, raising the lift top. Using a rack-and-pinion drive on both sides
+      keeps the two sides of the scissor mechanism synchronized without needing a separate control system.
+      <em>(Description drafted from the CAD model — let me know if any part of the mechanism works differently
+      and I'll correct it.)</em>
+    </p>
+    <div class="gallery">
+      <img src="/assets/rack-scissor/hero.jpg" alt="Rack-driven scissor lift assembly" style="width:100%; aspect-ratio:4/3; object-fit:cover; border:1px solid var(--line-strong); grid-column:1 / -1;">
+    </div>
+  </section>
+
+  <!-- CAD -->
+  <section class="part-panel" id="cad" role="tabpanel">
+    <h2>CAD files</h2>
+    <p class="part-desc">
+      Full assembly and part files, modeled in SolidWorks. Hosted in the
+      <a href="https://github.com/Arman-Goshtasbi/Bachelor-Projects/tree/main/Scissor%20Lifts" target="_blank" style="color:var(--accent);">Bachelor-Projects repo →</a>
+    </p>
+    <div class="file-list">
+      <div class="file-row">
+        <span class="fname">Scissor_Lift_Assembly.SLDASM <span class="fmeta">Assembly</span></span>
+        <a href="https://github.com/Arman-Goshtasbi/Bachelor-Projects/blob/main/Scissor%20Lifts/Scissor_Lift_Assembly.SLDASM" target="_blank">Open →</a>
+      </div>
+      <div class="file-row">
+        <span class="fname">BASE.SLDPRT <span class="fmeta">Part</span></span>
+        <a href="https://github.com/Arman-Goshtasbi/Bachelor-Projects/blob/main/Scissor%20Lifts/BASE.SLDPRT" target="_blank">Open →</a>
+      </div>
+      <div class="file-row">
+        <span class="fname">Lift_Top.SLDPRT <span class="fmeta">Part</span></span>
+        <a href="https://github.com/Arman-Goshtasbi/Bachelor-Projects/blob/main/Scissor%20Lifts/Lift_Top.SLDPRT" target="_blank">Open →</a>
+      </div>
+      <div class="file-row">
+        <span class="fname">links.SLDPRT <span class="fmeta">Part</span></span>
+        <a href="https://github.com/Arman-Goshtasbi/Bachelor-Projects/blob/main/Scissor%20Lifts/links.SLDPRT" target="_blank">Open →</a>
+      </div>
+      <div class="file-row">
+        <span class="fname">Sliding_Bracket.SLDPRT <span class="fmeta">Part</span></span>
+        <a href="https://github.com/Arman-Goshtasbi/Bachelor-Projects/blob/main/Scissor%20Lifts/Sliding_Bracket.SLDPRT" target="_blank">Open →</a>
+      </div>
+      <div class="file-row">
+        <span class="fname">Bracket_w_Thread.SLDPRT <span class="fmeta">Part</span></span>
+        <a href="https://github.com/Arman-Goshtasbi/Bachelor-Projects/blob/main/Scissor%20Lifts/Bracket_w_Thread.SLDPRT" target="_blank">Open →</a>
+      </div>
+      <div class="file-row">
+        <span class="fname">Rack.SLDPRT <span class="fmeta">Part</span></span>
+        <a href="https://github.com/Arman-Goshtasbi/Bachelor-Projects/blob/main/Scissor%20Lifts/Rack.SLDPRT" target="_blank">Open →</a>
+      </div>
+      <div class="file-row">
+        <span class="fname">rack_2.SLDPRT <span class="fmeta">Part</span></span>
+        <a href="https://github.com/Arman-Goshtasbi/Bachelor-Projects/blob/main/Scissor%20Lifts/rack_2.SLDPRT" target="_blank">Open →</a>
+      </div>
+      <div class="file-row">
+        <span class="fname">gear.SLDPRT <span class="fmeta">Part</span></span>
+        <a href="https://github.com/Arman-Goshtasbi/Bachelor-Projects/blob/main/Scissor%20Lifts/gear.SLDPRT" target="_blank">Open →</a>
+      </div>
+      <div class="file-row">
+        <span class="fname">ISO_-_Spur_gear_2_5M_20T...sldprt <span class="fmeta">Part</span></span>
+        <a href="https://github.com/Arman-Goshtasbi/Bachelor-Projects/blob/main/Scissor%20Lifts/ISO_-_Spur_gear_2_5M_20T_20PA_5FW_---S20A75H50L10_0N.sldprt" target="_blank">Open →</a>
+      </div>
+      <div class="file-row">
+        <span class="fname">ISO_-_Spur_gear_4M_17T...sldprt <span class="fmeta">Part</span></span>
+        <a href="https://github.com/Arman-Goshtasbi/Bachelor-Projects/blob/main/Scissor%20Lifts/ISO_-_Spur_gear_4M_17T_20PA_5FW_---S17A75H50L10_0N.sldprt" target="_blank">Open →</a>
+      </div>
+      <div class="file-row">
+        <span class="fname">motor_base.SLDPRT <span class="fmeta">Part</span></span>
+        <a href="https://github.com/Arman-Goshtasbi/Bachelor-Projects/blob/main/Scissor%20Lifts/motor_base.SLDPRT" target="_blank">Open →</a>
+      </div>
+      <div class="file-row">
+        <span class="fname">MOTOR_SHAFT.SLDPRT <span class="fmeta">Part</span></span>
+        <a href="https://github.com/Arman-Goshtasbi/Bachelor-Projects/blob/main/Scissor%20Lifts/MOTOR_SHAFT.SLDPRT" target="_blank">Open →</a>
+      </div>
+      <div class="file-row">
+        <span class="fname">bolts.SLDPRT <span class="fmeta">Part</span></span>
+        <a href="https://github.com/Arman-Goshtasbi/Bachelor-Projects/blob/main/Scissor%20Lifts/bolts.SLDPRT" target="_blank">Open →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- RENDERS -->
+  <section class="part-panel" id="renders" role="tabpanel">
+    <h2>Renders</h2>
+    <p class="part-desc">Full assembly render.</p>
+    <div class="gallery">
+      <img src="/assets/rack-scissor/hero.jpg" alt="Rack-driven scissor lift assembly" style="width:100%; aspect-ratio:4/3; object-fit:cover; border:1px solid var(--line-strong); grid-column:1 / -1;">
+    </div>
+  </section>
+
+  <!-- TOOLS / SOFTWARE USED -->
+  <div class="tools-strip">
+    <span class="label">Tools &amp; software</span>
+    <div class="tags">
+      <span class="tag">SolidWorks</span>
+    </div>
+  </div>
+</main>
+
+<footer class="wrap">
+  <p>&copy; 2026 Arman Goshtasbi</p>
+  <div class="links">
+    <a href="https://github.com/Arman-Goshtasbi" target="_blank">GitHub</a>
+    <a href="mailto:argo@mmmi.sdu.dk">Email</a>
+    <a href="https://scholar.google.com/citations?user=5LY02PgAAAAJ&hl=en" target="_blank">Scholar</a>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.parts-nav button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.parts-nav button').forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      document.querySelectorAll('.part-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+      document.getElementById(btn.dataset.part).classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
