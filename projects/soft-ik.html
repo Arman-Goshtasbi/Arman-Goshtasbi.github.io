@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soft Robot Inverse Kinematics — Arman Goshtasbi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-brand"><strong>Arman Goshtasbi</strong> / Portfolio</div>
+    <ul class="nav-tabs">
+      <li><a href="/"><span class="idx">01</span>Welcome</a></li>
+      <li><a href="/projects/" class="active"><span class="idx">02</span>Projects</a></li>
+      <li><a href="/tools/"><span class="idx">03</span>Tools</a></li>
+      <li><a href="/research/"><span class="idx">04</span>Research</a></li>
+      <li><a href="/about/"><span class="idx">05</span>About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="project-hero" style="background-image:url('/assets/soft-ik/bended-3act.jpg'); background-size:cover; background-position:center;">
+  <div class="wrap">
+    <span class="eyebrow">Published Research — TU/e Internship</span>
+    <h1>Soft robot inverse kinematics</h1>
+    <p>A geometric inverse kinematics model for multi-segment, extensible soft pneumatic actuators, developed during a mechanical engineering internship at TU/e.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="breadcrumb"><a href="/projects/">← All projects</a></div>
+
+  <!-- PARTS SELECTOR -->
+  <nav class="parts-nav" role="tablist" aria-label="Project sections">
+    <button class="active" data-part="overview" role="tab" aria-selected="true">Overview</button>
+    <button data-part="cad" role="tab" aria-selected="false">CAD</button>
+    <button data-part="code" role="tab" aria-selected="false">Code</button>
+    <button data-part="renders" role="tab" aria-selected="false">Media</button>
+  </nav>
+
+  <!-- OVERVIEW -->
+  <section class="part-panel active" id="overview" role="tabpanel">
+    <h2>Overview</h2>
+    <p class="part-desc">
+      Soft pneumatic actuators are hard to model due to their nonlinear, continuous dynamics and hyper-elastic
+      material behavior. This project approximates each segment of a multi-segment extensible soft robot as a
+      chain of rigid links connected by rotary and prismatic joints, then solves the inverse kinematics
+      numerically to track a desired end-effector trajectory — using the robot's redundancy for secondary
+      objectives such as tip-angle control. The method was validated on a 3-segment, 3-bellow physical
+      prototype (shown in the Media tab) and published in <em>Sensors</em>.
+    </p>
+    <p class="part-desc" style="margin-top:-8px;">
+      M. Keyvanara, A. Goshtasbi, I. A. Kuling, "A Geometric Approach towards Inverse Kinematics of Soft
+      Extensible Pneumatic Actuators Intended for Trajectory Tracking," <em>Sensors</em>, vol. 23, no. 15,
+      p. 6882, 2023. <a href="https://doi.org/10.3390/s23156882" target="_blank" style="color:var(--accent);">doi.org/10.3390/s23156882 →</a>
+    </p>
+    <div class="gallery">
+      <img src="/assets/soft-ik/bended-3act.jpg" alt="Bent 3-actuator soft robot prototype" style="width:100%; aspect-ratio:4/3; object-fit:cover; border:1px solid var(--line-strong);">
+      <img src="/assets/soft-ik/method-figure.png" alt="Rigid-link approximation of a soft segment, with prismatic and rotary joints" style="width:100%; aspect-ratio:4/3; object-fit:cover; border:1px solid var(--line-strong);">
+    </div>
+  </section>
+
+  <!-- CAD -->
+  <section class="part-panel" id="cad" role="tabpanel">
+    <h2>CAD files</h2>
+    <p class="part-desc">
+      3-segment, 3-bellow soft actuator model, modeled in SolidWorks. Hosted in the
+      <a href="https://github.com/Arman-Goshtasbi/Soft-Robots-Inverse-Kinematics/tree/main/SolidWorks" target="_blank" style="color:var(--accent);">Soft-Robots-Inverse-Kinematics repo →</a>
+    </p>
+    <div class="file-list">
+      <div class="file-row">
+        <span class="fname">3bellow 3segment.SLDASM <span class="fmeta">Assembly</span></span>
+        <a href="https://github.com/Arman-Goshtasbi/Soft-Robots-Inverse-Kinematics/blob/main/SolidWorks/3bellow%203segment.SLDASM" target="_blank">Open →</a>
+      </div>
+      <div class="file-row">
+        <span class="fname">3bellow base no air.SLDPRT <span class="fmeta">Part</span></span>
+        <a href="https://github.com/Arman-Goshtasbi/Soft-Robots-Inverse-Kinematics/blob/main/SolidWorks/3bellow%20base%20no%20air.SLDPRT" target="_blank">Open →</a>
+      </div>
+      <div class="file-row">
+        <span class="fname">3bellow_45deg.SLDPRT <span class="fmeta">Part</span></span>
+        <a href="https://github.com/Arman-Goshtasbi/Soft-Robots-Inverse-Kinematics/blob/main/SolidWorks/3bellow_45deg.SLDPRT" target="_blank">Open →</a>
+      </div>
+      <div class="file-row">
+        <span class="fname">3bellow_60deg.SLDPRT <span class="fmeta">Part</span></span>
+        <a href="https://github.com/Arman-Goshtasbi/Soft-Robots-Inverse-Kinematics/blob/main/SolidWorks/3bellow_60deg.SLDPRT" target="_blank">Open →</a>
+      </div>
+      <div class="file-row">
+        <span class="fname">3bellow_90deg.SLDPRT <span class="fmeta">Part</span></span>
+        <a href="https://github.com/Arman-Goshtasbi/Soft-Robots-Inverse-Kinematics/blob/main/SolidWorks/3bellow_90deg.SLDPRT" target="_blank">Open →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CODE -->
+  <section class="part-panel" id="code" role="tabpanel">
+    <h2>Code</h2>
+    <p class="part-desc">MATLAB implementation — one main script and two functions (forward and inverse kinematics).</p>
+    <div class="code-block">
+Solution = Inverse_Kinematics_final(P_d, L_link, numseg, num_link, false);<br>
+theta = Solution.th;<br>
+phi&nbsp;&nbsp;&nbsp; = Solution.phi;<br>
+L&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; = Solution.L;
+    </div>
+    <div class="file-list" style="margin-top:16px;">
+      <div class="file-row">
+        <span class="fname">Inverse_Kinematic_main_script.m <span class="fmeta">Main script</span></span>
+        <a href="https://github.com/Arman-Goshtasbi/Soft-Robots-Inverse-Kinematics/blob/main/Matlab%20Code/Inverse_Kinematic_main_script.m" target="_blank">Open →</a>
+      </div>
+      <div class="file-row">
+        <span class="fname">Inverse_Kinematics_final.m <span class="fmeta">Function — inverse kinematics</span></span>
+        <a href="https://github.com/Arman-Goshtasbi/Soft-Robots-Inverse-Kinematics/blob/main/Matlab%20Code/Inverse_Kinematics_final.m" target="_blank">Open →</a>
+      </div>
+      <div class="file-row">
+        <span class="fname">forward_kinematics.m <span class="fmeta">Function — forward kinematics</span></span>
+        <a href="https://github.com/Arman-Goshtasbi/Soft-Robots-Inverse-Kinematics/blob/main/Matlab%20Code/forward_kinematics.m" target="_blank">Open →</a>
+      </div>
+    </div>
+    <a class="repo-link" href="https://github.com/Arman-Goshtasbi/Soft-Robots-Inverse-Kinematics" target="_blank">View full repo on GitHub →</a>
+  </section>
+
+  <!-- MEDIA -->
+  <section class="part-panel" id="renders" role="tabpanel">
+    <h2>Media</h2>
+    <p class="part-desc">Physical prototype photos and a demo video.</p>
+    <div class="gallery">
+      <img src="/assets/soft-ik/bended-3act.jpg" alt="Bent 3-actuator soft robot prototype" style="width:100%; aspect-ratio:4/3; object-fit:cover; border:1px solid var(--line-strong);">
+      <img src="/assets/soft-ik/3seg-3bellow.jpg" alt="3-segment, 3-bellow soft actuator prototype" style="width:100%; aspect-ratio:4/3; object-fit:cover; border:1px solid var(--line-strong);">
+      <a href="https://www.youtube.com/watch?v=EYuKwtSX3gg" target="_blank" style="grid-column:1 / -1; display:block;">
+        <img src="https://img.youtube.com/vi/EYuKwtSX3gg/hqdefault.jpg" alt="Demo video — watch on YouTube" style="width:100%; aspect-ratio:16/9; object-fit:cover; border:1px solid var(--line-strong);">
+      </a>
+    </div>
+  </section>
+
+  <!-- TOOLS / SOFTWARE USED -->
+  <div class="tools-strip">
+    <span class="label">Tools &amp; software</span>
+    <div class="tags">
+      <span class="tag">SolidWorks</span>
+      <span class="tag">MATLAB</span>
+    </div>
+  </div>
+</main>
+
+<footer class="wrap">
+  <p>&copy; 2026 Arman Goshtasbi</p>
+  <div class="links">
+    <a href="https://github.com/Arman-Goshtasbi" target="_blank">GitHub</a>
+    <a href="mailto:argo@mmmi.sdu.dk">Email</a>
+    <a href="https://scholar.google.com/citations?user=5LY02PgAAAAJ&hl=en" target="_blank">Scholar</a>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.parts-nav button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.parts-nav button').forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      document.querySelectorAll('.part-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+      document.getElementById(btn.dataset.part).classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
