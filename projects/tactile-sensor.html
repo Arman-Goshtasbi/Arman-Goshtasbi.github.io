@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fluid Tactile Sensor — Arman Goshtasbi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-brand"><strong>Arman Goshtasbi</strong> / Portfolio</div>
+    <ul class="nav-tabs">
+      <li><a href="/"><span class="idx">01</span>Welcome</a></li>
+      <li><a href="/projects/" class="active"><span class="idx">02</span>Projects</a></li>
+      <li><a href="/tools/"><span class="idx">03</span>Tools</a></li>
+      <li><a href="/research/"><span class="idx">04</span>Research</a></li>
+      <li><a href="/about/"><span class="idx">05</span>About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="project-hero" style="background-image:url('/assets/tactile-sensor/hero.png'); background-size:cover; background-position:center;">
+  <div class="wrap">
+    <span class="eyebrow">Published Research — PhD, SDU Biorobotics</span>
+    <h1>Fluid tactile sensor</h1>
+    <p>A soft tactile sensor that senses touch position and force through fluid–solid interaction, demonstrated in real-time human–robot interaction with a UR robot arm.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="breadcrumb"><a href="/projects/">← All projects</a></div>
+
+  <!-- PARTS SELECTOR -->
+  <nav class="parts-nav" role="tablist" aria-label="Project sections">
+    <button class="active" data-part="overview" role="tab" aria-selected="true">Overview</button>
+    <button data-part="cad" role="tab" aria-selected="false">CAD</button>
+    <button data-part="code" role="tab" aria-selected="false">Code</button>
+    <button data-part="sim" role="tab" aria-selected="false">Simulation</button>
+    <button data-part="renders" role="tab" aria-selected="false">Media</button>
+  </nav>
+
+  <!-- OVERVIEW -->
+  <section class="part-panel active" id="overview" role="tabpanel">
+    <h2>Overview</h2>
+    <p class="part-desc">
+      A fluid-filled soft sensor infers touch position and applied force from pressure signals generated as
+      the fluid deforms under contact, rather than from an array of discrete sensing elements. Both 1D and 2D
+      versions were built and characterized across multiple fill media (air, oil, water), including underwater
+      operation. A machine learning pipeline (fuzzy clustering + ANFIS) maps the raw pressure signals to
+      position and force, and the sensor was integrated with a UR robot arm over a real-time MATLAB–Python TCP
+      link to demonstrate live human–robot interaction — the arm responds to a touch on the sensor with a poke
+      motion in real time.
+    </p>
+    <p class="part-desc" style="margin-top:-8px;">
+      A. Goshtasbi, M. Berghuis, A. Parvaresh, S. P. Murali Babu, R. W. Style, A. Rafsanjani, "Tactile
+      Perception through Fluid–Solid Interaction," <em>Nature Communications</em>, 2026.
+      <a href="https://www.nature.com/articles/s41467-026-72497-3" target="_blank" style="color:var(--accent);">nature.com →</a>
+    </p>
+    <div class="gallery">
+      <img src="/assets/tactile-sensor/hero.png" alt="Fluid tactile sensor mounted on a UR robot arm" style="width:100%; aspect-ratio:4/3; object-fit:cover; border:1px solid var(--line-strong); grid-column:1 / -1;">
+    </div>
+  </section>
+
+  <!-- CAD -->
+  <section class="part-panel" id="cad" role="tabpanel">
+    <h2>CAD files</h2>
+    <p class="part-desc">
+      Molds for casting the 1D and 2D sensors, modeled in SolidWorks. Hosted in the
+      <a href="https://github.com/Arman-Goshtasbi/Fluid-Tactile-Sensor/tree/main/Molds%20CAD%20files" target="_blank" style="color:var(--accent);">Fluid-Tactile-Sensor repo →</a>
+    </p>
+    <div class="file-list">
+      <div class="file-row">
+        <span class="fname">100mm_1D_mold_dia1,5mm.SLDPRT <span class="fmeta">1D mold — Part</span></span>
+        <a href="https://github.com/Arman-Goshtasbi/Fluid-Tactile-Sensor/blob/main/Molds%20CAD%20files/100mm_1D_mold_dia1%2C5mm.SLDPRT" target="_blank">Open →</a>
+      </div>
+      <div class="file-row">
+        <span class="fname">100mm_1D_mold_dia1,5mm.STL <span class="fmeta">1D mold — STL</span></span>
+        <a href="https://github.com/Arman-Goshtasbi/Fluid-Tactile-Sensor/blob/main/Molds%20CAD%20files/100mm_1D_mold_dia1%2C5mm.STL" target="_blank">Open →</a>
+      </div>
+      <div class="file-row">
+        <span class="fname">Hilbert_4th_order_6060_curved_SLA.SLDPRT <span class="fmeta">2D mold (Hilbert curve) — Part</span></span>
+        <a href="https://github.com/Arman-Goshtasbi/Fluid-Tactile-Sensor/blob/main/Molds%20CAD%20files/Hilbert_4th_order_6060_curved_SLA.SLDPRT" target="_blank">Open →</a>
+      </div>
+      <div class="file-row">
+        <span class="fname">Hilbert_4th_order_6060_curved_SLA.STL <span class="fmeta">2D mold (Hilbert curve) — STL</span></span>
+        <a href="https://github.com/Arman-Goshtasbi/Fluid-Tactile-Sensor/blob/main/Molds%20CAD%20files/Hilbert_4th_order_6060_curved_SLA.STL" target="_blank">Open →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CODE -->
+  <section class="part-panel" id="code" role="tabpanel">
+    <h2>Code</h2>
+    <p class="part-desc">Three stages: raw signal processing, machine learning, and real-time robot control.</p>
+
+    <p class="part-desc" style="margin:20px 0 6px;"><strong>1. Raw data processing (MATLAB)</strong> — extracts peak pressure and rise time from raw sensor signals, and maximum force from experimental data, to build the ML training set.</p>
+    <div class="file-list">
+      <div class="file-row">
+        <span class="fname">Raw_Data_Processing.m</span>
+        <a href="https://github.com/Arman-Goshtasbi/Fluid-Tactile-Sensor/blob/main/Raw%20Data%20Processing/Raw_Data_Processing.m" target="_blank">Open →</a>
+      </div>
+    </div>
+
+    <p class="part-desc" style="margin:20px 0 6px;"><strong>2. Machine learning (MATLAB)</strong> — Fuzzy C-Means clustering + ANFIS, trained to map pressure signals to touch position and force for both the 1D and 2D sensors.</p>
+    <div class="file-list">
+      <div class="file-row">
+        <span class="fname">FCM_ANFIS_learning_tactile.m</span>
+        <a href="https://github.com/Arman-Goshtasbi/Fluid-Tactile-Sensor/blob/main/Machine%20Learning/FCM_ANFIS_learning_tactile.m" target="_blank">Open →</a>
+      </div>
+    </div>
+
+    <p class="part-desc" style="margin:20px 0 6px;"><strong>3. MATLAB–Python TCP link</strong> — MATLAB runs live signal processing and ANFIS prediction, then streams the predicted position and force to a Python server that drives a UR robot via RTDE for real-time human–robot interaction.</p>
+    <div class="file-list">
+      <div class="file-row">
+        <span class="fname">UR_Matlab_tcp_XF_1D.m <span class="fmeta">MATLAB — sensing + prediction</span></span>
+        <a href="https://github.com/Arman-Goshtasbi/Fluid-Tactile-Sensor/blob/main/MATLAB-Python%20TCP/UR_Matlab_tcp_XF_1D.m" target="_blank">Open →</a>
+      </div>
+      <div class="file-row">
+        <span class="fname">UR_Python_TCP_1D_XF.py <span class="fmeta">Python — robot control</span></span>
+        <a href="https://github.com/Arman-Goshtasbi/Fluid-Tactile-Sensor/blob/main/MATLAB-Python%20TCP/UR_Python_TCP_1D_XF.py" target="_blank">Open →</a>
+      </div>
+    </div>
+
+    <a class="repo-link" href="https://github.com/Arman-Goshtasbi/Fluid-Tactile-Sensor" target="_blank">View full repo on GitHub →</a>
+  </section>
+
+  <!-- SIMULATION -->
+  <section class="part-panel" id="sim" role="tabpanel">
+    <h2>Simulation</h2>
+    <p class="part-desc">
+      The fluid–solid interaction inside the sensor was simulated in COMSOL Multiphysics. Simulation files and
+      instructions are maintained in a companion repository:
+      <a href="https://github.com/mwberghuis/softsensor" target="_blank" style="color:var(--accent);">github.com/mwberghuis/softsensor →</a>
+    </p>
+  </section>
+
+  <!-- MEDIA -->
+  <section class="part-panel" id="renders" role="tabpanel">
+    <h2>Media</h2>
+    <p class="part-desc" style="margin-bottom:8px;"><strong>Renders:</strong></p>
+    <div class="gallery">
+      <img src="/assets/tactile-sensor/hero.png" alt="Fluid tactile sensor mounted on a UR robot arm" style="width:100%; aspect-ratio:4/3; object-fit:cover; border:1px solid var(--line-strong); grid-column:1 / -1;">
+    </div>
+    <p class="part-desc" style="margin:24px 0 8px;"><strong>Video:</strong></p>
+    <iframe width="100%" style="aspect-ratio:16/9; border:1px solid var(--line-strong); display:block;" src="https://www.youtube.com/embed/olpxfcg2iBs" title="Fluid tactile sensor — demo video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </section>
+
+  <!-- TOOLS / SOFTWARE USED -->
+  <div class="tools-strip">
+    <span class="label">Tools &amp; software</span>
+    <div class="tags">
+      <span class="tag">SolidWorks</span>
+      <span class="tag">MATLAB</span>
+      <span class="tag">Python</span>
+      <span class="tag">COMSOL Multiphysics</span>
+    </div>
+  </div>
+</main>
+
+<footer class="wrap">
+  <p>&copy; 2026 Arman Goshtasbi</p>
+  <div class="links">
+    <a href="https://github.com/Arman-Goshtasbi" target="_blank">GitHub</a>
+    <a href="mailto:argo@mmmi.sdu.dk">Email</a>
+    <a href="https://scholar.google.com/citations?user=5LY02PgAAAAJ&hl=en" target="_blank">Scholar</a>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.parts-nav button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.parts-nav button').forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      document.querySelectorAll('.part-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+      document.getElementById(btn.dataset.part).classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
