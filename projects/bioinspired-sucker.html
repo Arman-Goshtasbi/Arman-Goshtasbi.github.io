@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bioinspired Stiffness-Tunable Sucker — Arman Goshtasbi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-brand"><strong>Arman Goshtasbi</strong> / Portfolio</div>
+    <ul class="nav-tabs">
+      <li><a href="/"><span class="idx">01</span>Welcome</a></li>
+      <li><a href="/projects/" class="active"><span class="idx">02</span>Projects</a></li>
+      <li><a href="/media/"><span class="idx">03</span>Media</a></li>
+      <li><a href="/tools/"><span class="idx">04</span>Tools</a></li>
+      <li><a href="/research/"><span class="idx">05</span>Research</a></li>
+      <li><a href="/about/"><span class="idx">06</span>About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="project-hero" style="background-image:url('/assets/bioinspired-sucker/hero.jpg'); background-size:cover; background-position:center;">
+  <div class="wrap">
+    <span class="eyebrow">Published Research — M.S., University of Twente</span>
+    <h1>Bioinspired stiffness-tunable sucker</h1>
+    <p>A vacuum suction cup that adapts to steep angular surfaces while soft, then stiffens after attachment using granular jamming — no extra actuator or sensor required.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="breadcrumb"><a href="/projects/">← All projects</a></div>
+
+  <!-- PARTS SELECTOR -->
+  <nav class="parts-nav" role="tablist" aria-label="Project sections">
+    <button class="active" data-part="overview" role="tab" aria-selected="true">Overview</button>
+    <button data-part="renders" role="tab" aria-selected="false">Media</button>
+  </nav>
+
+  <!-- OVERVIEW -->
+  <section class="part-panel active" id="overview" role="tabpanel">
+    <h2>Overview</h2>
+    <p class="part-desc">
+      Inspired by the octopus's extrinsic sucker muscles, this design pairs a conventional active suction pad
+      with a soft granular-jammed stalk. Before attachment, the stalk is compliant and bends easily, letting
+      the suction pad conform to steep angled surfaces. Once the pad seals against the surface, the same
+      vacuum source jams the granular particles inside the stalk, sharply increasing its bending stiffness —
+      so the same low-pressure source both attaches the gripper and stiffens the joint, with no separate
+      actuator or sensor needed. The sucker adapted to angles up to 85° with under 0.5&nbsp;N of force, and in
+      a real-world demo held a water-filled glass carafe on an angled surface, adding 1,028&nbsp;g of lateral
+      load without slipping.
+    </p>
+    <img src="/assets/bioinspired-sucker/schematic.jpg" alt="Octopus sucker anatomy and the resulting granular-jammed stalk design" style="width:100%; max-width:700px; border:1px solid var(--line-strong); display:block; margin-top:16px;">
+    <p class="part-desc" style="margin-top:16px;">
+      A. Goshtasbi, A. Sadeghi, "A Bioinspired Stiffness Tunable Sucker for Passive Adaptation and Firm
+      Attachment to Angular Substrates," <em>Frontiers in Robotics and AI</em>, vol. 10, 2023.
+      <a href="https://doi.org/10.3389/frobt.2023.1080015" target="_blank" style="color:var(--accent);">doi.org/10.3389/frobt.2023.1080015 →</a>
+    </p>
+  </section>
+
+  <!-- MEDIA -->
+  <section class="part-panel" id="renders" role="tabpanel">
+    <h2>Media</h2>
+    <p class="part-desc" style="margin-bottom:8px;"><strong>Renders:</strong></p>
+    <div class="gallery">
+      <img src="/assets/bioinspired-sucker/hero.jpg" alt="Sucker holding a water-filled carafe on an angled surface" style="width:100%; aspect-ratio:4/3; object-fit:cover; border:1px solid var(--line-strong); grid-column:1 / -1;">
+    </div>
+    <p class="part-desc" style="margin:24px 0 8px;"><strong>Video:</strong></p>
+    <iframe width="100%" style="aspect-ratio:16/9; border:1px solid var(--line-strong); display:block;" src="https://www.youtube.com/embed/Zlz1G0BnGoc" title="Bioinspired stiffness-tunable sucker — demo video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </section>
+
+  <!-- TOOLS / SOFTWARE USED -->
+  <div class="tools-strip">
+    <span class="label">Tools &amp; software</span>
+    <div class="tags">
+      <span class="tag">SolidWorks</span>
+    </div>
+  </div>
+</main>
+
+<footer class="wrap">
+  <p>&copy; 2026 Arman Goshtasbi</p>
+  <div class="links">
+    <a href="https://github.com/Arman-Goshtasbi" target="_blank">GitHub</a>
+    <a href="mailto:argo@mmmi.sdu.dk">Email</a>
+    <a href="https://scholar.google.com/citations?user=5LY02PgAAAAJ&hl=en" target="_blank">Scholar</a>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.parts-nav button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.parts-nav button').forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      document.querySelectorAll('.part-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+      document.getElementById(btn.dataset.part).classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
