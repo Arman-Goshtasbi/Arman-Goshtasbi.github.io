@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lost-Cast Wax 3D Printing — Arman Goshtasbi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-brand"><strong>Arman Goshtasbi</strong> / Portfolio</div>
+    <ul class="nav-tabs">
+      <li><a href="/"><span class="idx">01</span>Welcome</a></li>
+      <li><a href="/projects/" class="active"><span class="idx">02</span>Projects</a></li>
+      <li><a href="/tools/"><span class="idx">03</span>Tools</a></li>
+      <li><a href="/research/"><span class="idx">04</span>Research</a></li>
+      <li><a href="/about/"><span class="idx">05</span>About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="project-hero" style="background-image:url('/assets/wax-printing/hero.jpg'); background-size:cover; background-position:center;">
+  <div class="wrap">
+    <span class="eyebrow">In Progress — PhD Research</span>
+    <h1>Lost-cast wax 3D printing</h1>
+    <p>Fabricating intricate, miniature soft robots in a single shot of molding, using 3D-printed wax molds instead of machined or multi-part rigid molds.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="breadcrumb"><a href="/projects/">← All projects</a></div>
+
+  <!-- PARTS SELECTOR -->
+  <nav class="parts-nav" role="tablist" aria-label="Project sections">
+    <button class="active" data-part="overview" role="tab" aria-selected="true">Overview</button>
+    <button data-part="cad" role="tab" aria-selected="false">CAD</button>
+    <button data-part="renders" role="tab" aria-selected="false">Media</button>
+  </nav>
+
+  <!-- OVERVIEW -->
+  <section class="part-panel active" id="overview" role="tabpanel">
+    <h2>Overview</h2>
+    <p class="part-desc">
+      Lost-cast wax molding uses a 3D-printed wax (or wax-like) core to define intricate, often multi-channel
+      internal geometries that would be difficult or impossible to demold conventionally. The wax mold is cast
+      around, then melted or dissolved out, leaving a single-shot soft actuator or sensor with fine internal
+      detail and no assembly step. This is an active, ongoing project — designs cover both single-material
+      actuators (bending, twisting, contracting, origami-based, and a fluid tactile sensor) and multi-material
+      actuators combining stiff and soft regions in one mold.
+    </p>
+  </section>
+
+  <!-- CAD -->
+  <section class="part-panel" id="cad" role="tabpanel">
+    <h2>CAD files</h2>
+    <p class="part-desc">
+      Each design folder generally includes the target actuator part, the 3D-printable wax mold, and an
+      assembly file showing both together. Hosted in the
+      <a href="https://github.com/Arman-Goshtasbi/Lost-Cast-Wax-3D-Printing" target="_blank" style="color:var(--accent);">Lost-Cast-Wax-3D-Printing repo →</a>
+    </p>
+
+    <p class="part-desc" style="margin:20px 0 6px;"><strong>Single material</strong></p>
+    <div class="file-list">
+      <div class="file-row">
+        <span class="fname">Antagonistic Actuator <span class="fmeta">2-channel antagonistic bending</span></span>
+        <a href="https://github.com/Arman-Goshtasbi/Lost-Cast-Wax-3D-Printing/tree/main/Mold%20Designs/Single%20Material/Antagonistic%20Actuator" target="_blank">Open folder →</a>
+      </div>
+      <div class="file-row">
+        <span class="fname">3 Channel Actuator <span class="fmeta">3-channel actuator</span></span>
+        <a href="https://github.com/Arman-Goshtasbi/Lost-Cast-Wax-3D-Printing/tree/main/Mold%20Designs/Single%20Material/3%20Channel%20Actuator" target="_blank">Open folder →</a>
+      </div>
+      <div class="file-row">
+        <span class="fname">Twisting Actuators <span class="fmeta">Single- and double-channel twisting</span></span>
+        <a href="https://github.com/Arman-Goshtasbi/Lost-Cast-Wax-3D-Printing/tree/main/Mold%20Designs/Single%20Material/Twisting%20Actuators" target="_blank">Open folder →</a>
+      </div>
+      <div class="file-row">
+        <span class="fname">Origami Vacuum Actuator <span class="fmeta">3-channel origami-based vacuum actuator</span></span>
+        <a href="https://github.com/Arman-Goshtasbi/Lost-Cast-Wax-3D-Printing/tree/main/Mold%20Designs/Single%20Material/Origami%20Vacuum%20Actuator" target="_blank">Open folder →</a>
+      </div>
+      <div class="file-row">
+        <span class="fname">Kresling Origami <span class="fmeta">Kresling-pattern origami actuator</span></span>
+        <a href="https://github.com/Arman-Goshtasbi/Lost-Cast-Wax-3D-Printing/tree/main/Mold%20Designs/Single%20Material/Kresling%20Origami" target="_blank">Open folder →</a>
+      </div>
+      <div class="file-row">
+        <span class="fname">Hilbert Fluid Sensor <span class="fmeta">Fluid tactile sensor, Hilbert-curve channel</span></span>
+        <a href="https://github.com/Arman-Goshtasbi/Lost-Cast-Wax-3D-Printing/tree/main/Mold%20Designs/Single%20Material/Hilbert%20Fluid%20Sensor" target="_blank">Open folder →</a>
+      </div>
+      <div class="file-row">
+        <span class="fname">Popping Actuator <span class="fmeta">Snap-through dome actuator</span></span>
+        <a href="https://github.com/Arman-Goshtasbi/Lost-Cast-Wax-3D-Printing/tree/main/Mold%20Designs/Single%20Material/Popping%20Actuator" target="_blank">Open folder →</a>
+      </div>
+    </div>
+
+    <p class="part-desc" style="margin:20px 0 6px;"><strong>Multi-material</strong></p>
+    <div class="file-list">
+      <div class="file-row">
+        <span class="fname">Bending Actuators</span>
+        <a href="https://github.com/Arman-Goshtasbi/Lost-Cast-Wax-3D-Printing/tree/main/Mold%20Designs/Multi%20Materials/Bending%20Actuators" target="_blank">Open folder →</a>
+      </div>
+      <div class="file-row">
+        <span class="fname">Contracting Actuator</span>
+        <a href="https://github.com/Arman-Goshtasbi/Lost-Cast-Wax-3D-Printing/tree/main/Mold%20Designs/Multi%20Materials/Contracting%20Actuator" target="_blank">Open folder →</a>
+      </div>
+      <div class="file-row">
+        <span class="fname">Elongating</span>
+        <a href="https://github.com/Arman-Goshtasbi/Lost-Cast-Wax-3D-Printing/tree/main/Mold%20Designs/Multi%20Materials/Elongating" target="_blank">Open folder →</a>
+      </div>
+      <div class="file-row">
+        <span class="fname">Twisting Actuator</span>
+        <a href="https://github.com/Arman-Goshtasbi/Lost-Cast-Wax-3D-Printing/tree/main/Mold%20Designs/Multi%20Materials/Twisting%20Actuator" target="_blank">Open folder →</a>
+      </div>
+    </div>
+    <a class="repo-link" href="https://github.com/Arman-Goshtasbi/Lost-Cast-Wax-3D-Printing" target="_blank">View full repo on GitHub →</a>
+  </section>
+
+  <!-- MEDIA -->
+  <section class="part-panel" id="renders" role="tabpanel">
+    <h2>Media</h2>
+    <p class="part-desc" style="margin-bottom:8px;"><strong>Renders:</strong></p>
+    <div class="gallery">
+      <img src="/assets/wax-printing/mold-box.jpg" alt="3D-printed wax mold box with four square pins" style="width:100%; aspect-ratio:4/3; object-fit:cover; border:1px solid var(--line-strong);">
+      <img src="/assets/wax-printing/kresling.jpg" alt="Kresling origami actuator, cast on top of a wax mold" style="width:100%; aspect-ratio:4/3; object-fit:cover; border:1px solid var(--line-strong);">
+      <img src="/assets/wax-printing/dome-part.jpg" alt="Small cast dome-shaped actuator part" style="width:100%; aspect-ratio:4/3; object-fit:cover; border:1px solid var(--line-strong);">
+      <img src="/assets/wax-printing/origami-cad.jpg" alt="Origami vacuum actuator CAD model" style="width:100%; aspect-ratio:4/3; object-fit:cover; border:1px solid var(--line-strong);">
+      <img src="/assets/wax-printing/origami-cross.jpg" alt="Cross-section of the origami vacuum actuator mold" style="width:100%; aspect-ratio:4/3; object-fit:cover; border:1px solid var(--line-strong);">
+    </div>
+  </section>
+
+  <!-- TOOLS / SOFTWARE USED -->
+  <div class="tools-strip">
+    <span class="label">Tools &amp; software</span>
+    <div class="tags">
+      <span class="tag">SolidWorks</span>
+    </div>
+  </div>
+</main>
+
+<footer class="wrap">
+  <p>&copy; 2026 Arman Goshtasbi</p>
+  <div class="links">
+    <a href="https://github.com/Arman-Goshtasbi" target="_blank">GitHub</a>
+    <a href="mailto:argo@mmmi.sdu.dk">Email</a>
+    <a href="https://scholar.google.com/citations?user=5LY02PgAAAAJ&hl=en" target="_blank">Scholar</a>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.parts-nav button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.parts-nav button').forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      document.querySelectorAll('.part-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+      document.getElementById(btn.dataset.part).classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
