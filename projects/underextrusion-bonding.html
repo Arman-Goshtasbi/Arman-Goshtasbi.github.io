@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Underextrusion Bonding — Arman Goshtasbi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-brand"><strong>Arman Goshtasbi</strong> / Portfolio</div>
+    <ul class="nav-tabs">
+      <li><a href="/"><span class="idx">01</span>Welcome</a></li>
+      <li><a href="/projects/" class="active"><span class="idx">02</span>Projects</a></li>
+      <li><a href="/media/"><span class="idx">03</span>Media</a></li>
+      <li><a href="/tools/"><span class="idx">04</span>Tools</a></li>
+      <li><a href="/research/"><span class="idx">05</span>Research</a></li>
+      <li><a href="/about/"><span class="idx">06</span>About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="project-hero" style="background-image:url('/assets/underextrusion-bonding/gripper-poster.jpg'); background-size:cover; background-position:center;">
+  <div class="wrap">
+    <span class="eyebrow">Published Research — PhD, SDU Biorobotics</span>
+    <h1>Underextrusion bonding for soft-rigid hybrids</h1>
+    <p>An FDM 3D printing technique that turns a common printing defect — underextrusion — into a strong, repeatable bond between rigid plastic and soft silicone.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="breadcrumb"><a href="/projects/">← All projects</a></div>
+
+  <!-- PARTS SELECTOR -->
+  <nav class="parts-nav" role="tablist" aria-label="Project sections">
+    <button class="active" data-part="overview" role="tab" aria-selected="true">Overview</button>
+    <button data-part="renders" role="tab" aria-selected="false">Media</button>
+  </nav>
+
+  <!-- OVERVIEW -->
+  <section class="part-panel active" id="overview" role="tabpanel">
+    <h2>Overview</h2>
+    <p class="part-desc">
+      Bonding soft silicone to rigid plastic is a common bottleneck in hybrid soft robots — adhesives are
+      failure-prone and design-limiting. This work turns underextrusion, normally considered a 3D printing
+      defect, into a bonding mechanism: printing a section of a part at a reduced flow rate creates a porous,
+      fibrous structure similar to connective tissue, which silicone can penetrate and interlock with during
+      casting. Across lap shear, peel, and pressure tests, the technique outperformed commercial silicone
+      adhesive by roughly 70–280%, depending on the test and material. We demonstrated the approach with two
+      hybrid grippers: one with a rigid "nail" bonded to a soft finger for picking up small objects like LEDs,
+      and a hexagonal inflatable gripper with rigid panels connected by soft ballooning joints.
+    </p>
+    <p class="part-desc" style="margin-top:-8px;">
+      A. Goshtasbi, L. Grignaffini, A. Sadeghi, "Bio-inspired 3D Printing Approach for Bonding Soft and Rigid
+      Materials Through Underextrusion," <em>Scientific Reports</em>, vol. 15, p. 4429, 2025.
+      <a href="https://doi.org/10.1038/s41598-024-84525-7" target="_blank" style="color:var(--accent);">doi.org/10.1038/s41598-024-84525-7 →</a>
+    </p>
+  </section>
+
+  <!-- MEDIA -->
+  <section class="part-panel" id="renders" role="tabpanel">
+    <h2>Media</h2>
+    <p class="part-desc">Three clips from the paper's supplementary material, re-encoded for the web.</p>
+
+    <p class="part-desc" style="margin:20px 0 6px;"><strong>Hybrid nail gripper — picking up an LED</strong></p>
+    <video controls preload="metadata" poster="/assets/underextrusion-bonding/gripper-poster.jpg" style="width:100%; max-width:500px; border:1px solid var(--line-strong); display:block;">
+      <source src="/assets/underextrusion-bonding/gripper-demo.mp4" type="video/mp4">
+    </video>
+
+    <p class="part-desc" style="margin:24px 0 6px;"><strong>Underextrusion printing process (thin-wall, varying flow rate)</strong></p>
+    <video controls preload="metadata" poster="/assets/underextrusion-bonding/thinwall-poster.jpg" style="width:100%; max-width:500px; border:1px solid var(--line-strong); display:block;">
+      <source src="/assets/underextrusion-bonding/thinwall-printing.mp4" type="video/mp4">
+    </video>
+
+    <p class="part-desc" style="margin:24px 0 6px;"><strong>Ballooning pressure test — underextrusion vs. Sil-Poxy adhesive</strong></p>
+    <video controls preload="metadata" poster="/assets/underextrusion-bonding/ballooning-poster.jpg" style="width:100%; max-width:500px; border:1px solid var(--line-strong); display:block;">
+      <source src="/assets/underextrusion-bonding/ballooning-test.mp4" type="video/mp4">
+    </video>
+  </section>
+
+  <!-- TOOLS / SOFTWARE USED -->
+  <div class="tools-strip">
+    <span class="label">Tools &amp; software</span>
+    <div class="tags">
+      <span class="tag">SolidWorks</span>
+      <span class="tag">Python</span>
+    </div>
+  </div>
+</main>
+
+<footer class="wrap">
+  <p>&copy; 2026 Arman Goshtasbi</p>
+  <div class="links">
+    <a href="https://github.com/Arman-Goshtasbi" target="_blank">GitHub</a>
+    <a href="mailto:argo@mmmi.sdu.dk">Email</a>
+    <a href="https://scholar.google.com/citations?user=5LY02PgAAAAJ&hl=en" target="_blank">Scholar</a>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.parts-nav button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.parts-nav button').forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      document.querySelectorAll('.part-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+      document.getElementById(btn.dataset.part).classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
