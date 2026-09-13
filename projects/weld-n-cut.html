@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weld n'Cut — Arman Goshtasbi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-brand"><strong>Arman Goshtasbi</strong> / Portfolio</div>
+    <ul class="nav-tabs">
+      <li><a href="/"><span class="idx">01</span>Welcome</a></li>
+      <li><a href="/projects/" class="active"><span class="idx">02</span>Projects</a></li>
+      <li><a href="/tools/"><span class="idx">03</span>Tools</a></li>
+      <li><a href="/research/"><span class="idx">04</span>Research</a></li>
+      <li><a href="/about/"><span class="idx">05</span>About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="project-hero" style="background-image:url('/assets/weld-n-cut/hero.jpg'); background-size:cover; background-position:center;">
+  <div class="wrap">
+    <span class="eyebrow">Published Research — PhD, SDU Biorobotics</span>
+    <h1>Weld n'Cut</h1>
+    <p>An open-source, CNC-controlled platform that combines ultrasonic welding and oscillating-knife cutting to automate the fabrication of inflatable fabric actuators.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="breadcrumb"><a href="/projects/">← All projects</a></div>
+
+  <!-- PARTS SELECTOR -->
+  <nav class="parts-nav" role="tablist" aria-label="Project sections">
+    <button class="active" data-part="overview" role="tab" aria-selected="true">Overview</button>
+    <button data-part="cad" role="tab" aria-selected="false">CAD</button>
+    <button data-part="design" role="tab" aria-selected="false">Design</button>
+    <button data-part="renders" role="tab" aria-selected="false">Media</button>
+  </nav>
+
+  <!-- OVERVIEW -->
+  <section class="part-panel active" id="overview" role="tabpanel">
+    <h2>Overview</h2>
+    <p class="part-desc">
+      Textile-based inflatable soft actuators are normally fabricated in separate steps — heat-sealing fabric
+      layers with a press, then manually cutting away non-stick masking layers that defined the internal
+      chambers — a slow, error-prone process. Weld n'Cut combines both steps into a single automated platform
+      built on a CNC gantry (CNC-STEP High-Z S-720): a 500 W ultrasonic spot welder, converted from a manual
+      tool into a programmable one, welds the actuator's internal pattern, then an oscillating tangential knife
+      cuts its boundary — both coordinated over the same G-code toolpath, with no manual masking step in between.
+      The platform was used to fabricate four actuator classes: linear (contraction) PneuNets, unidirectional
+      and antagonistic bending actuators, twisting actuators (via inclined weld lines), and kirigami actuators
+      with staggered cut patterns for large, tunable contraction.
+    </p>
+    <p class="part-desc" style="margin-top:-8px;">
+      This work was supported by the Independent Research Fund Denmark (Sapere Aude grant 1051-00075B) and the
+      Villum Young Investigator grant 37499.
+    </p>
+    <p class="part-desc" style="margin-top:-8px;">
+      A. Goshtasbi, B. Seyidoğlu, S. P. Murali Babu, A. Parvaresh, C. D. Do, A. Rafsanjani, "Weld n'Cut:
+      Automated Fabrication of Inflatable Fabric Actuators," <em>IEEE 8th International Conference on Soft
+      Robotics (RoboSoft)</em>, 2025.
+      <a href="https://arxiv.org/abs/2502.06361" target="_blank" style="color:var(--accent);">arxiv.org/abs/2502.06361 →</a>
+    </p>
+    <div class="gallery">
+      <img src="/assets/weld-n-cut/hero.jpg" alt="Weld n'Cut CNC gantry platform" style="width:100%; aspect-ratio:4/3; object-fit:cover; border:1px solid var(--line-strong); grid-column:1 / -1;">
+    </div>
+  </section>
+
+  <!-- CAD -->
+  <section class="part-panel" id="cad" role="tabpanel">
+    <h2>CAD files</h2>
+    <p class="part-desc">
+      Custom mounting hardware for the ultrasonic welder and knife end-effector, modeled in SolidWorks, plus
+      the electronics schematic. Hosted in the
+      <a href="https://github.com/Arman-Goshtasbi/Weldn-cut" target="_blank" style="color:var(--accent);">Weldn-cut repo →</a>
+    </p>
+    <div class="file-list">
+      <div class="file-row">
+        <span class="fname">Mountin_plate_cutter_welder.SLDPRT <span class="fmeta">Mounting plate for the cutter/welder assembly</span></span>
+        <a href="https://github.com/Arman-Goshtasbi/Weldn-cut/blob/main/CAD%20files/Mountin_plate_cutter_welder.SLDPRT" target="_blank">Open →</a>
+      </div>
+      <div class="file-row">
+        <span class="fname">Ultrasonic holder_.SLDPRT <span class="fmeta">Ultrasonic welder mount</span></span>
+        <a href="https://github.com/Arman-Goshtasbi/Weldn-cut/blob/main/CAD%20files/Ultrasonic%20holder_.SLDPRT" target="_blank">Open →</a>
+      </div>
+      <div class="file-row">
+        <span class="fname">back_sheet.SLDPRT <span class="fmeta">Machine bed backing sheet</span></span>
+        <a href="https://github.com/Arman-Goshtasbi/Weldn-cut/blob/main/CAD%20files/back_sheet.SLDPRT" target="_blank">Open →</a>
+      </div>
+    </div>
+
+    <p class="part-desc" style="margin:20px 0 6px;"><strong>Electronics</strong></p>
+    <div class="file-list">
+      <div class="file-row">
+        <span class="fname">Electronic_schematic.pdf <span class="fmeta">Schematic</span></span>
+        <a href="https://github.com/Arman-Goshtasbi/Weldn-cut/blob/main/Electronic%20Schematics/Electronic_schematic.pdf" target="_blank">Open →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESIGN -->
+  <section class="part-panel" id="design" role="tabpanel">
+    <h2>Design</h2>
+    <p class="part-desc">
+      Parametric actuator patterns, built in Grasshopper, that define the weld/cut geometry for different
+      actuation modes, plus a utility that converts vector drawings into the machine's G-code toolpath.
+    </p>
+    <div class="file-list">
+      <div class="file-row">
+        <span class="fname">Bending_actuator.gh <span class="fmeta">Unidirectional / antagonistic bending PneuNet</span></span>
+        <a href="https://github.com/Arman-Goshtasbi/Weldn-cut/blob/main/Grasshopper/Bending_actuator.gh" target="_blank">Open →</a>
+      </div>
+      <div class="file-row">
+        <span class="fname">Contraction_kirigami.gh <span class="fmeta">Kirigami actuator, staggered linear cuts</span></span>
+        <a href="https://github.com/Arman-Goshtasbi/Weldn-cut/blob/main/Grasshopper/Contraction_kirigami.gh" target="_blank">Open →</a>
+      </div>
+      <div class="file-row">
+        <span class="fname">contraction_nocut.gh <span class="fmeta">Linear contraction PneuNet, weld-only</span></span>
+        <a href="https://github.com/Arman-Goshtasbi/Weldn-cut/blob/main/Grasshopper/contraction_nocut.gh" target="_blank">Open →</a>
+      </div>
+      <div class="file-row">
+        <span class="fname">twisting_30deg.gh <span class="fmeta">Twisting actuator, inclined weld lines</span></span>
+        <a href="https://github.com/Arman-Goshtasbi/Weldn-cut/blob/main/Grasshopper/twisting_30deg.gh" target="_blank">Open →</a>
+      </div>
+      <div class="file-row">
+        <span class="fname">Material_exploration.gh <span class="fmeta">Test patterns for material/weld-speed characterization</span></span>
+        <a href="https://github.com/Arman-Goshtasbi/Weldn-cut/blob/main/Grasshopper/Material_exploration.gh" target="_blank">Open →</a>
+      </div>
+      <div class="file-row">
+        <span class="fname">SVG-DXF-DWG_2_GCode.gh <span class="fmeta">Converts imported vector drawings into weld &amp; cut G-code</span></span>
+        <a href="https://github.com/Arman-Goshtasbi/Weldn-cut/blob/main/Grasshopper/SVG-DXF-DWG_2_GCode.gh" target="_blank">Open →</a>
+      </div>
+    </div>
+    <a class="repo-link" href="https://github.com/Arman-Goshtasbi/Weldn-cut" target="_blank">View full repo on GitHub →</a>
+  </section>
+
+  <!-- MEDIA -->
+  <section class="part-panel" id="renders" role="tabpanel">
+    <h2>Media</h2>
+    <p class="part-desc" style="margin-bottom:8px;"><strong>Renders:</strong></p>
+    <div class="gallery">
+      <img src="/assets/weld-n-cut/hero.jpg" alt="Weld n'Cut CNC gantry platform" style="width:100%; aspect-ratio:4/3; object-fit:cover; border:1px solid var(--line-strong); grid-column:1 / -1;">
+    </div>
+    <p class="part-desc" style="margin:24px 0 8px;"><strong>Video:</strong></p>
+    <iframe width="100%" style="aspect-ratio:16/9; border:1px solid var(--line-strong); display:block;" src="https://www.youtube.com/embed/cfQpgHbBx4o" title="Weld n'Cut — demo video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </section>
+
+  <!-- TOOLS / SOFTWARE USED -->
+  <div class="tools-strip">
+    <span class="label">Tools &amp; software</span>
+    <div class="tags">
+      <span class="tag">SolidWorks</span>
+      <span class="tag">Rhino / Grasshopper</span>
+    </div>
+  </div>
+</main>
+
+<footer class="wrap">
+  <p>&copy; 2026 Arman Goshtasbi</p>
+  <div class="links">
+    <a href="https://github.com/Arman-Goshtasbi" target="_blank">GitHub</a>
+    <a href="mailto:argo@mmmi.sdu.dk">Email</a>
+    <a href="https://scholar.google.com/citations?user=5LY02PgAAAAJ&hl=en" target="_blank">Scholar</a>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.parts-nav button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.parts-nav button').forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      document.querySelectorAll('.part-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+      document.getElementById(btn.dataset.part).classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
